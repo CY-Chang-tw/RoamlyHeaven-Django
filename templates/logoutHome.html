@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roamly Heaven</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+
+
+</head>
+<body>
+    <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Roamly Heaven</span>
+      </a>
+
+      <ul class="nav nav-pills">
+          <li class="=nav-item"><a class="nav-link">Hi! {{ username }} </a></li>
+        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active" aria-current="page">Logout</a></li>
+{#        <li class="nav-item"><a href="/signup/" class="nav-link">Sign up</a></li>#}
+        <li class="nav-item"><a href="/faqs/" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+      </ul>
+    </header>
+  </div>
+
+{#    <div class="container">{{ listing }}</div>#}
+    {#    #}
+    <div class="hotel_booking_area position">
+                <div class="container">
+                <form action="{% url 'home' %}" method = "POST">
+                    {% csrf_token %}
+                    <div class="hotel_booking_table">
+                        <div class="col-md-3">
+                            <h2>Book Your Room</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="boking_table">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="form-group">
+                                                <label>Check  in:</label>
+                                                <div class="input-group date" id="start">
+
+                                                    <input type="date" name = "indate" placeholder="Check in" required/>
+                                                        <span class="input-group-addon">
+
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <label>Check out:</label>
+                                            <div class="form-group" >
+                                                <div class="input-group date" id="end" >
+
+                                                    <input type="date" name = "outdate"  placeholder="Check out" required/>
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <label>People:</label>
+                                            <div class="input-group">
+                                                <select class="wide" name = "p_num" required>
+{#
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+
+                                                </select>
+                                            </div>
+{#                                            <div class="input-group">#}
+{#                                                <select class="wide" name = "roomtype">#}
+{#                                                    <option data-display="房型">Room Type</option>#}
+{#                                                    <option value="單人房">單人房(1-Room)</option>#}
+{#                                                    <option value="雙人房">雙人房(2-Room)</option>#}
+{#                                                    <option value="四人房">四人房(4-Room)</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="travel">
+                                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    </span>
+                                                    <input list = "searchlist" name = "city" id="city" class="form-control" placeholder="Where?" required/>
+                                                    <datalist id="searchlist">
+                                                        <option value="Taipei"><option value="San Fran">
+                                                        <option value="New York"><option value="Roma">
+                                                        <option value="Paris"><option value="Tokyo">
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                                <input type="submit" value="Search" name="Search" class="search_btn button_hover ">
+                                            </div>
+
+{#                                            <?php if (!isset($_SESSION['account'])) : ?>#}
+{#                                                <iframe name="main" style="display:none"></iframe>#}
+{#                                            <?php endif ?>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+    {#    #}
+    <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2023 RoamlyHeaven, Inc</span>
+    </div>
+  </footer>
+</div>
+
+
+
+</body>
+</html>

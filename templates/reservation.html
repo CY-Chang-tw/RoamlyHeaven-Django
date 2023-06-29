@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roamly Heaven</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+
+
+</head>
+<body>
+    <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Roamly Heaven</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active" aria-current="page">Logout</a></li>
+{#        <li class="nav-item"><a href="/signup/" class="nav-link">Sign up</a></li>#}
+        <li class="nav-item"><a href="/faqs/" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+      </ul>
+    </header>
+  </div>
+    <div class="container">
+        <h1>Room Information</h1>
+    </div>
+    <div class="container">Name: {{ listing_name }}<br>Bed: {% for x in bed %}{{ x.bed }}{% endfor %}<br>
+        Rule: {% for x in rules %}{{ x.rules }}{% endfor %}<br>Rate: {% for x in rate %}{{ x.rate }}{% endfor %}<br>
+        Check in: {{ indate }}<br>Check out: {{ outdate }}<br>{{ p_num }} people<br><br>
+     <div class="payment-title">
+        <h1>Payment Information</h1>
+    </div>
+    <div class="container preload">
+        <div class="creditcard">
+            <div class="front">
+                <div id="ccsingle"></div>
+
+            </div>
+
+        </div>
+    </div>
+    <form action="{% url 'complete' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="listing_name" value="{{ listing_name }}">
+        <input type="hidden" name="listing_id" value="{{ listing_id }}">
+        <input type="hidden" name="indate" value="{{ indate }}">
+        <input type="hidden" name="outdate" value="{{ outdate }}">
+        <div class="form-container">
+        <div class="field-container">
+            <label for="name">Name</label>
+            <input id="name" maxlength="20" type="text" name="cc_name">
+        </div>
+        <div class="field-container">
+            <label for="cardnumber">Card Number</label>
+            <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" name="cc_number">
+        </div>
+        <div class="field-container">
+            <label for="expirationdate">Expiration (mm/yy)</label>
+            <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric" name="cc_expiry">
+        </div>
+        <div class="field-container">
+            <label for="securitycode">Security Code</label>
+            <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" name="cc_cvv">
+        </div>
+        <div class="field-container">
+            <input type="submit" value="Submit" name="complete">
+    </div></form>
+
+    </div>
+
+    {#    #}
+
+
+    {#    #}
+    <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2023 RoamlyHeaven, Inc</span>
+    </div>
+  </footer>
+</div>
+
+
+
+</body>
+</html>

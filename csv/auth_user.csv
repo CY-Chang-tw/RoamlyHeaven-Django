@@ -1,0 +1,12 @@
+This user table is built in Django. And this table will add data with more users signup.
+id,password,last_login,is_superuser,username,last_name,email,is_staff,is_active,date_joined,first_name
+1,pbkdf2_sha256$260000$jYeoAZKN300GNr9HkssMnk$lo5R8lmw4hnxGBix6viBvohm9ZjLwdkB7fghjBvj75g=,2023-06-05 15:54:15.760185,1,owen1018,,owenchang654@gmail.com,1,1,2023-05-29 20:51:42.730967,
+2,pbkdf2_sha256$260000$UByIFPpAt4Nd2OD2IjuJgn$c7dVApuXkrEv8FGWCBZtGeApwM3XuCBlGm1IX1OuaQM=,2023-06-05 19:34:23.325789,0,kelly,,kellytes@gmail.com,0,1,2023-06-05 16:04:38.890133,
+3,pbkdf2_sha256$260000$VIR9S0ORlayIfum9bRn6ou$Ei7SJuMlmnFmA27bnTSte7Tnmg0gS0S8G58CtZ2HPaY=,,0,allen,,allendaefji@gmail.com,0,1,2023-06-05 19:28:04.122630,
+4,pbkdf2_sha256$260000$7QeJszLaAGre2y5W56376l$XbCFZU6Ee01Vx65Y4TJiz8zdpICspyxf6N2550/8DzE=,,0,Oney,,Okfdij@gmail.com,0,1,2023-06-05 19:28:25.568406,
+5,pbkdf2_sha256$260000$wEIbnBpfCYV14zZBDAySQt$H5XOmKigVmI95ma9sBYtIMbqpwEpYfEYrbQpLmwjRGs=,,0,Arron,,arronb@gmail.com,0,1,2023-06-05 19:28:45.248038,
+6,pbkdf2_sha256$260000$3i9l72yytsQauVjrTTD4w4$bV+i0XtL+3cW4QDz6YoDMJm0pTpjW9Tc4fxWwLn/elg=,,0,cathy08,,cathy0814@gmail.com,0,1,2023-06-05 19:29:07.210030,
+7,pbkdf2_sha256$260000$LWrzvaQSsg3Cy5H1JAgSTo$kXfNZmp6FsYV0CvrB+HuXcDILe05KY82WjFyCEFQwts=,2023-06-05 19:40:15.058435,0,Bob,,bobbss@gmail.com,0,1,2023-06-05 19:40:06.452080,
+8,pbkdf2_sha256$260000$P5XY1sNQoGoQXcVXiWtwc1$w2I/HrZeYqbwl+Px7e9yZ94jHLeqQWoJjM3eRsTBGZs=,,0,翔竣,,yangage@gmail.com,0,1,2023-06-06 10:16:57.123721,
+9,pbkdf2_sha256$260000$rqab9gVIAJL3qgYZA9MUqi$xqeqwQtLoZHZCT3Q4xundOXYqYkUGA4vXnWZfhiNOu4=,,0,Alice,,alice45@gmail.com,0,1,2023-06-06 10:26:12.585374,
+10,pbkdf2_sha256$260000$Bu3sppY9GCXb7voVLLUCiP$T40PURpcXmxF8e8P2yvEEZV92bp8kMKuQQJGUq9OQgU=,,0,steven,,stevenkt@gmail.com,0,1,2023-06-06 10:26:36.431765,
